@@ -10,9 +10,9 @@ return {
         { "<c-e>", "<cmd>silent Grapple toggle_tags<cr>", desc = "Toggle tags menu" },
 
         { "<c-h>", "<cmd>silent Grapple select index=1<cr>", desc = "Select first tag" },
-        { "<c-t>", "<cmd>silent Grapple select index=2<cr>", desc = "Select second tag" },
-        { "<c-n>", "<cmd>silent Grapple select index=3<cr>", desc = "Select third tag" },
-        { "<c-z>", "<cmd>silent Grapple select index=4<cr>", desc = "Select fourth tag" },
+        { "<c-j>", "<cmd>silent Grapple select index=2<cr>", desc = "Select second tag" },
+        { "<c-k>", "<cmd>silent Grapple select index=3<cr>", desc = "Select third tag" },
+        { "<c-l>", "<cmd>silent Grapple select index=4<cr>", desc = "Select fourth tag" },
 
     },
 }
