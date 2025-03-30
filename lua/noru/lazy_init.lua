@@ -20,6 +20,7 @@ require("lazy").setup({
     spec = {
         -- import your plugins
         { import = "noru.plugins" },
+        { import = "noru.plugins.lsp" },
     },
     change_detection = { notify = false }
 })
