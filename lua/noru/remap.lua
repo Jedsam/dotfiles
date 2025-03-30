@@ -1,0 +1,13 @@
+vim.g.mapleader = " "
+vim.keymap.set("n", "<leader>e",vim.cmd.Ex) -- Open file browser
+vim.keymap.set("n", "<C-s>",vim.cmd.w) -- Save a file
+vim.keymap.set("i", "jj", "<ESC>", { silent = true }) -- Use jj in instert mode to swap back to normal mode
+
+-- Making delete permamently delete stuff and add new keybind for it (cut operation)
+vim.keymap.set({ "n", "v" }, "d", '"_d', { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "D", '"_D', { noremap = true, silent = true })
+-- Making x delete stuff without messing with the clipboard
+vim.keymap.set({ "n", "v" }, "x", '"_x', { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "X", '"_X', { noremap = true, silent = true })
+-- Set Ctrl x for cutting stuff
+vim.keymap.set({ "n", "v" }, "<C-x>", "d", { noremap = true, silent = true })
