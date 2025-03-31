@@ -6,3 +6,5 @@ That's all
 [ThePrimeagen's init.lua, starter config for initialising vim](https://github.com/ThePrimeagen/init.lua/tree/master)
 
 [shivambegin for the config for transparent background](https://github.com/shivambegin/Neovim/blob/main/lua/plugins/transparent.lua)
+
+[cpow/typecraft's neovim guide](https://github.com/cpow/neovim-for-newbs/tree/main)
