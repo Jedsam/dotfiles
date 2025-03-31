@@ -8,3 +8,7 @@ vim.opt.expandtab = true -- Converts \t into spaces when pressing TAB
 vim.opt.nu = true
 vim.opt.rnu = true
 vim.opt.fillchars:append { eob = " " }
+
+-- Enable incremental search for "/" command
+vim.opt.hlsearch = false
+vim.opt.incsearch = true

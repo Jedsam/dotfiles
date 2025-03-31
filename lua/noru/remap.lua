@@ -10,3 +10,9 @@ vim.keymap.set({ "n", "v" }, "x", '"_x', { noremap = true, silent = true })
 vim.keymap.set({ "n", "v" }, "X", '"_X', { noremap = true, silent = true })
 -- Set Ctrl x for cutting stuff
 vim.keymap.set({ "n", "v" }, "<C-x>", "d", { noremap = true, silent = true })
+
+-- Add move operation for visual mode
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+
