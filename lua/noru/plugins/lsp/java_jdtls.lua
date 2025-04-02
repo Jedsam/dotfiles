@@ -151,12 +151,29 @@ return
         -- https://github.com/mfussenegger/nvim-jdtls#usage
 
         local opts = {buffer = bufnr}
-        vim.keymap.set('n', '<A-o>', "<cmd>lua require('jdtls').organize_imports()<cr>", opts)
-        vim.keymap.set('n', 'crv', "<cmd>lua require('jdtls').extract_variable()<cr>", opts)
-        vim.keymap.set('x', 'crv', "<esc><cmd>lua require('jdtls').extract_variable(true)<cr>", opts)
-        vim.keymap.set('n', 'crc', "<cmd>lua require('jdtls').extract_constant()<cr>", opts)
-        vim.keymap.set('x', 'crc', "<esc><cmd>lua require('jdtls').extract_constant(true)<cr>", opts)
-        vim.keymap.set('x', 'crm', "<esc><Cmd>lua require('jdtls').extract_method(true)<cr>", opts)
+        vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
+        vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
+        vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
+        vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
+        vim.keymap.set('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
+        vim.keymap.set('n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<cr>', opts)
+        vim.keymap.set('n', '<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<cr>', opts)
+        vim.keymap.set('n', '<leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>', opts)
+        vim.keymap.set('n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
+        vim.keymap.set('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
+        vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr> | copen', opts)
+        vim.keymap.set('n', '<leader>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>', opts)
+        vim.keymap.set('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>', opts)
+        vim.keymap.set('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<cr>', opts)
+        vim.keymap.set('n', '<leader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>', opts)
+        -- Java specific
+        vim.keymap.set('n', '<leader>di', "<cmd>lua require'jdtls'.organize_imports()<cr>", opts)
+        vim.keymap.set('n', '<leader>dt', "<cmd>lua require'jdtls'.test_class()<cr>", opts)
+        vim.keymap.set('n', '<leader>dn', "<cmd>lua require'jdtls'.test_nearest_method()<cr>", opts)
+        vim.keymap.set('v', '<leader>de', "<esc><cmd>lua require('jdtls').extract_variable(true)<cr>", opts)
+        vim.keymap.set('n', '<leader>de', "<cmd>lua require('jdtls').extract_variable()<cr>", opts)
+        vim.keymap.set('v', '<leader>dm', "<esc><cmd>lua require('jdtls').extract_method(true)<cr>", opts)
+        vim.keymap.set('n', '<leader>cf', '<cmd>lua vim.lsp.buf.formatting()<cr>', opts)
       end
 
       local function jdtls_setup(event)
@@ -220,6 +237,7 @@ return
             },
             configuration = {
               updateBuildConfiguration = 'interactive',
+              runtimes = path.runtimes,
             },
             maven = {
               downloadSources = true,
