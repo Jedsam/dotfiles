@@ -162,7 +162,6 @@ return
         vim.keymap.set('n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
         vim.keymap.set('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
         vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr> | copen', opts)
-        vim.keymap.set('n', '<leader>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>', opts)
         vim.keymap.set('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>', opts)
         vim.keymap.set('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<cr>', opts)
         vim.keymap.set('n', '<leader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>', opts)
@@ -316,5 +315,5 @@ return
         callback = jdtls_setup,
       })
     end
-  }
+}
 
