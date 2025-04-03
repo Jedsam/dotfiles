@@ -18,3 +18,6 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 -- Smoother scrolling
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
+-- Select all text
+vim.keymap.set("n", "<C-a>", "gg0VG")
