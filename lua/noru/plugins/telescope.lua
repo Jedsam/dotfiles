@@ -12,7 +12,7 @@ return {
 					find_command = { "rg", "--files", "--hidden", "-g", "!.git", },
 				})
 			end, { noremap = true, silent = true })
-			vim.keymap.set("n", "<C-p>", builtin.git_files, {})
+			vim.keymap.set("n", "<C-g>", builtin.git_files, {})
 			vim.keymap.set("n", "<leader>gs", function()
 				builtin.grep_string({ search = vim.fn.input("Grep > ") })
 			end)
