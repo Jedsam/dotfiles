@@ -12,3 +12,6 @@ vim.opt.fillchars:append { eob = " " }
 -- Enable incremental search for "/" command
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
+
+-- Disable default status line showing the current mode (INSERT, VISUAL etc.)
+vim.opt.showmode = false
