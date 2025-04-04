@@ -21,6 +21,7 @@ require("lazy").setup({
         -- import your plugins
         { import = "noru.plugins" },
         { import = "noru.plugins.lsp" },
+        { import = "noru.plugins.visual" },
     },
     change_detection = { notify = false }
 })
