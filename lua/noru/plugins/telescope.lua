@@ -4,12 +4,29 @@ return {
         tag = "0.1.8",
         dependencies = { "nvim-lua/plenary.nvim" },
         config = function()
-            require("telescope").setup({})
+            require("telescope").setup({
+                defaults = {
+                    hidden = true,
+                    no_ignore = true,
+                    file_ignore_patterns = {
+                        "node_modules",
+                        ".ruff_cache",
+                        ".git/",
+                        ".mypy_cache",
+                    },
+                },
+            })
             local builtin = require("telescope.builtin")
             vim.keymap.set("n", "<leader>pf", function()
                 require("telescope.builtin").find_files({
+                    hidden = false,
+                    find_command = { "rg", "--files", "-g", "!.git", },
+                })
+            end, { noremap = true, silent = true })
+            vim.keymap.set("n", "<leader>phf", function()
+                require("telescope.builtin").find_files({
                     hidden = true,
-                    find_command = { "rg", "--files", "--hidden", "-g", "!.git", },
+                    no_ignore = true,
                 })
             end, { noremap = true, silent = true })
             vim.keymap.set("n", "<C-g>", builtin.git_files, {})
