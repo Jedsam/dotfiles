@@ -47,6 +47,6 @@ return {
     vim.keymap.set("n", "<c-p>", "<Plug>(YankyPreviousEntry)")
     vim.keymap.set("n", "<c-n>", "<Plug>(YankyNextEntry)")
     
-    vim.keymap.set({ "n", "x" }, "<leader>p", "<cmd>YankyRingHistory<cr>")
+    vim.keymap.set({ "n", "x" }, "<leader>P", "<cmd>YankyRingHistory<cr>")
   end
 }
