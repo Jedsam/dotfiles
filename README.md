@@ -1,2 +1,2 @@
 # This folder contains my configuration files
-That's all...
+Use stow to apply the config files.
