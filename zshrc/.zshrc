@@ -71,10 +71,14 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
-plugins+=(zsh-vi-mode)
 plugins+=(zsh-autosuggestions)
+plugins=(fzf)
+plugins+=(zsh-vi-mode)
+plugins+=(fzf-tab)
 
 source $ZSH/oh-my-zsh.sh
+
+source <(fzf --zsh)
 
 # User configuration
 
@@ -89,7 +93,7 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='nvim'
 # fi
-
+_comp_options+=(globdots)
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
 
@@ -108,7 +112,7 @@ alias vim="nvim"
 alias vi="nvim"
 alias oldvim="vim"
 alias pacmain='sudo pacman'
-alias pacmalt="❮ sudo pacman --root /mnt/mydisk/pacman/root --cachedir /mnt/mydisk/pacman/cache" 
+alias pacmalt="sudo pacman --root /mnt/mydisk/pacman/root --cachedir /mnt/mydisk/pacman/cache" 
 eval "$(starship init zsh)"
 
 neofetch
