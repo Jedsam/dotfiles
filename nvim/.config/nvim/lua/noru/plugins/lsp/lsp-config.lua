@@ -4,7 +4,7 @@ return {
         config = function()
             local lspconfig = require("lspconfig")
             -- Log level off to save storage
-            vim.lsp.set_log_level("off")
+            -- vim.lsp.set_log_level("off")
             -- For Lua Language
 
             lspconfig.lua_ls.setup({
