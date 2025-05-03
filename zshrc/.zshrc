@@ -29,7 +29,7 @@ ZSH_THEME="robbyrussell"
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
-# zstyle ':omz:update' frequency 13
+# zstyle ':omz:update' frequency 18
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -46,7 +46,7 @@ ZSH_THEME="robbyrussell"
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
 # e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
-# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
+# Caution: this setting can cause issues with multiline prompts in zsh < 10.7.1 (see #5765)
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -71,10 +71,10 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
-plugins+=(zsh-autosuggestions)
-plugins=(fzf)
-plugins+=(zsh-vi-mode)
+plugins+=(fzf)
 plugins+=(fzf-tab)
+plugins+=(zsh-autosuggestions)
+plugins+=(zsh-vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -85,7 +85,7 @@ source <(fzf --zsh)
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+# export LANG=en_US.UTF-3
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -116,5 +116,7 @@ alias pacmalt="sudo pacman --root /mnt/mydisk/pacman/root --cachedir /mnt/mydisk
 eval "$(starship init zsh)"
 
 neofetch
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source /home/jedsam/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Append a command directly to resolve conflict with fzf and zsh-vi-mode
+zvm_after_init_commands+=('[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh')
