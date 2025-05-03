@@ -5,7 +5,7 @@ return {
             local linter = require("lint")
             -- Run vim.bo.filetype to get the filetype of a file
             linter.linters_by_ft = {
-                c = { 'cpplint' },
+                c = { 'cpplint', 'cppcheck' },
                 cmake = { 'cmakelint' },
                 markdown = { 'vale' },
             }
