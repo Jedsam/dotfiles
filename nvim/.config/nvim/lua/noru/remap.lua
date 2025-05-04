@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<C-s>",vim.cmd.w) -- Save a file
+vim.keymap.set("n", "<C-s>", vim.cmd.w) -- Save a file
 vim.keymap.set("i", "jj", "<ESC>", { silent = true }) -- Use jj in instert mode to swap back to normal mode
 
 -- Making delete permamently delete stuff and add new keybind for it (cut operation)
@@ -20,4 +20,4 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- Select all text
-vim.keymap.set("n", "<C-a>", "gg0VG")
+-- vim.keymap.set("n", "<C-a>", "gg0VG")
