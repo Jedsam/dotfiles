@@ -8,6 +8,10 @@ vim.keymap.set({ "n", "v" }, "D", '"_D', { noremap = true, silent = true })
 -- Making x delete stuff without messing with the clipboard
 vim.keymap.set({ "n", "v" }, "x", '"_x', { noremap = true, silent = true })
 vim.keymap.set({ "n", "v" }, "X", '"_X', { noremap = true, silent = true })
+-- Making c change stuff without messign with the clipboard
+vim.keymap.set({ "n", "v" }, "c", '"_c', { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "C", '"_C', { noremap = true, silent = true })
+
 -- Set Ctrl x for cutting stuff
 vim.keymap.set({ "n", "v" }, "<C-x>", "d", { noremap = true, silent = true })
 

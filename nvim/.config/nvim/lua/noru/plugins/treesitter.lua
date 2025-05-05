@@ -147,29 +147,28 @@ return {
 						},
 
 						include_surrounding_whitespace = true, -- Extends selections to include whitespace
-
-						swap = {
-							enable = true,
-							swap_next = {
-								["<leader>sa"] = "@parameter.inner",
-								["<leader>sf"] = "@function.inner",
-								["<leader>sc"] = "@class.inner",
-								["<leader>si"] = "@conditional.inner",
-								["<leader>sl"] = "@loop.inner",
-								["<leader>sb"] = "@block.inner",
-								["<leader>sp"] = "@call.inner",
-								["<leader>st"] = "@comment.outer", -- Comments typically only have "outer"
-							},
-							swap_previous = {
-								["<leader>Sa"] = "@parameter.inner",
-								["<leader>Sf"] = "@function.inner",
-								["<leader>Sc"] = "@class.inner",
-								["<leader>Si"] = "@conditional.inner",
-								["<leader>Sl"] = "@loop.inner",
-								["<leader>Sb"] = "@block.inner",
-								["<leader>Sp"] = "@call.inner",
-								["<leader>St"] = "@comment.outer",
-							},
+					},
+					swap = {
+						enable = true,
+						swap_next = {
+							["<leader>sa"] = "@parameter.inner",
+							["<leader>sf"] = "@function.inner",
+							["<leader>sc"] = "@class.inner",
+							["<leader>si"] = "@conditional.inner",
+							["<leader>sl"] = "@loop.inner",
+							["<leader>sb"] = "@block.inner",
+							["<leader>sp"] = "@call.inner",
+							["<leader>st"] = "@comment.outer", -- Comments typically only have "outer"
+						},
+						swap_previous = {
+							["<leader>Sa"] = "@parameter.inner",
+							["<leader>Sf"] = "@function.inner",
+							["<leader>Sc"] = "@class.inner",
+							["<leader>Si"] = "@conditional.inner",
+							["<leader>Sl"] = "@loop.inner",
+							["<leader>Sb"] = "@block.inner",
+							["<leader>Sp"] = "@call.inner",
+							["<leader>St"] = "@comment.outer",
 						},
 					},
 					move = {
