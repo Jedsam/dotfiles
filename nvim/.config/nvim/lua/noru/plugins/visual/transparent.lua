@@ -17,6 +17,7 @@ return {
 		require("transparent").clear_prefix("Tab")
 		require("transparent").clear_prefix("Telescope")
 		require("transparent").clear_prefix("Trouble")
+		require("transparent").clear_prefix("TreesitterContext")
 		require("transparent").setup({ -- Optional, you don't have to run setup.
 			groups = { -- table: default groups
 				"Comment",
