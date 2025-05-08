@@ -4,6 +4,7 @@ return {
 		require("yanky").setup({
 			{
 				ring = {
+					system_clipboard = { sync_with_ring = false },
 					history_length = 100,
 					storage = "shada",
 					storage_path = vim.fn.stdpath("data") .. "/databases/yanky.db", -- Only for sqlite storage
