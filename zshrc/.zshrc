@@ -121,3 +121,8 @@ source /home/jedsam/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-syntax-hig
 
 # Append a command directly to resolve conflict with fzf and zsh-vi-mode
 zvm_after_init_commands+=('[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh')
+
+# Start tmux at the start
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+  tmux attach-session -t default || tmux new-session -s default
+fi

@@ -13,6 +13,7 @@ return {
 					-- Conform will run the first available formatter
 					javascript = { "prettierd", "prettier", stop_after_first = true },
 					c = { "astyle" },
+					-- java = { "google-java-format" },
 				},
 				format_after_save = {
 					lsp_format = "fallback",
