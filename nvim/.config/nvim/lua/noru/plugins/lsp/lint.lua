@@ -6,6 +6,7 @@ return {
 			-- Run vim.bo.filetype to get the filetype of a file
 			linter.linters_by_ft = {
 				c = { "cpplint", "cppcheck" },
+				cpp = { "cpplint", "cppcheck" },
 				cmake = { "cmakelint" },
 				markdown = { "vale" },
 			}
