@@ -13,7 +13,7 @@ return {
 			-- Configuring the existing linters
 			local cpplint = linter.linters.cpplint
 			cpplint.args = {
-				"--filter=-whitespace/line_length,-build/include_subdir,-legal/copyright",
+				"--filter=-whitespace/line_length,-build/include_subdir,-legal/copyright,-whitespace/indent",
 			}
 			-- Lint on event
 			vim.api.nvim_create_autocmd({ "BufWritePost" }, {
