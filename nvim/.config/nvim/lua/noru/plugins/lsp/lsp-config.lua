@@ -93,6 +93,20 @@ return {
 			vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>")
 			vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>")
 
+			-- Switch source header
+			vim.keymap.set("n", "<leader>sh", function()
+				local file = vim.fn.expand("%:p") -- full path
+				if file:match("%.cpp$") then
+					local header = file:gsub("%.cpp$", ".hpp")
+					vim.cmd("edit " .. header)
+				elseif file:match("%.hpp$") then
+					local source = file:gsub("%.hpp$", ".cpp")
+					vim.cmd("edit " .. source)
+				else
+					print("Not a .cpp or .hpp file")
+				end
+			end, { desc = "Toggle between .cpp and .hpp" })
+
 			-- Do stuff on attach
 			-- vim.api.nvim_create_autocmd('LspAttach', {
 			--     group = vim.api.nvim_create_augroup('my.lsp', {}),

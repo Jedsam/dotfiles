@@ -23,8 +23,29 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { noremap = true })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { noremap = true })
 
--- Remap Ctrl + Shift + A to Ctrl + X (decrease)
-vim.keymap.set("n", "<C-A>", "<C-x>", { noremap = true })
+-- Add <leader> + x for Ctrl + X (decrease)
+vim.keymap.set("n", "<leader>x", "<C-x>", { noremap = true })
+
+-- Add a new line without insert mode
+vim.keymap.set("n", "<leader>o", function()
+	local count = vim.v.count1
+	local lnum = vim.fn.line(".")
+	local lines = {}
+	for _ = 1, count do
+		table.insert(lines, "")
+	end
+	vim.fn.append(lnum, lines)
+end, { silent = true })
+
+vim.keymap.set("n", "<leader>O", function()
+	local count = vim.v.count1
+	local lnum = vim.fn.line(".") - 1
+	local lines = {}
+	for _ = 1, count do
+		table.insert(lines, "")
+	end
+	vim.fn.append(lnum, lines)
+end, { silent = true })
 
 -- Select all text
 -- vim.keymap.set("n", "<C-a>", "gg0VG")
