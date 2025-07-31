@@ -144,6 +144,10 @@ return {
 							["as"] = { query = "@statement.outer", desc = "Select outer part of a statement" },
 							["ap"] = { query = "@call.outer", desc = "Select outer part of a function call" },
 							["ip"] = { query = "@call.inner", desc = "Select inner part of a function call" },
+							["a="] = { query = "@assignment.outer", desc = "Select outer part of an assignment" },
+							["i="] = { query = "@assignment.inner", desc = "Select inner part of an assignment" },
+							["l="] = { query = "@assignment.lhs", desc = "Select left part of an assignment" },
+							["r="] = { query = "@assignment.rhs", desc = "Select right part of an assignment" },
 						},
 
 						include_surrounding_whitespace = true, -- Extends selections to include whitespace
@@ -251,5 +255,9 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter-textobjects",
 		after = "nvim-treesitter",
+	},
+	{
+		"nvim-treesitter/playground",
+		cmd = "TSPlaygroundToggle",
 	},
 }
