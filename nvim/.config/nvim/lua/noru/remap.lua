@@ -27,8 +27,8 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz", { noremap = true })
 vim.keymap.set("n", "<leader>x", "<C-x>", { noremap = true })
 
 -- Add a new line without insert mode
-vim.keymap.set("n", "<leader>o", "o<C-[>k", { silent = true })
-vim.keymap.set("n", "<leader>O", "O<C-[>j", { silent = true })
+vim.keymap.set("n", "<leader>o", "o<C-[>", { silent = true })
+vim.keymap.set("n", "<leader>O", "O<C-[>", { silent = true })
 
 -- Select all text
 -- vim.keymap.set("n", "<C-a>", "gg0VG")

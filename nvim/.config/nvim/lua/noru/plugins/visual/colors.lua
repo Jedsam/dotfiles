@@ -17,8 +17,6 @@ return {
 		config = function()
 			require("rose-pine").setup({
 				disable_background = true,
-				variant = "auto", -- auto, main, moon, or dawn
-				dark_variant = "main", -- main, moon, or dawn
 				dim_inactive_windows = false,
 				extend_background_behind_borders = true,
 
@@ -82,7 +80,7 @@ return {
 					-- ["@namespace"] = { fg = "pine" },
 					-- ["@class"] = { fg = "rose" },
 					-- ["@variable"] = { fg = "text" },
-					-- ["@property"] = { fg = "foam" },
+					-- ["@property"] = { fg = "text" },
 					-- ["@function"] = { fg = "love" },
 					-- ["@constructor"] = { fg = "foam" },
 					-- ["@punctuation"] = { fg = "subtle" },
