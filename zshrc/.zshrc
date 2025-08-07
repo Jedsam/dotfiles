@@ -112,8 +112,6 @@ alias vim="nvim"
 alias vi="nvim"
 alias v="nvim"
 alias oldvim="vim"
-alias pacmain='sudo pacman'
-alias pacmalt="sudo pacman --root /mnt/mydisk/pacman/root --cachedir /mnt/mydisk/pacman/cache" 
 eval "$(starship init zsh)"
 
 neofetch
