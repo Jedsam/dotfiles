@@ -13,17 +13,24 @@ return {
 					-- Conform will run the first available formatter
 					javascript = { "prettierd", "prettier", stop_after_first = true },
 					c = { "astyle" },
-					cpp = { "astyle" },
+					cpp = { "clang-format" },
 					-- java = { "google-java-format" },
 				},
 				format_after_save = {
 					lsp_format = "fallback",
 				},
+				formatters = {
+					["clang-format"] = {
+						prepend_args = {
+							"--style={IndentWidth: 2, TabWidth: 2, UseTab: Never, ColumnLimit: 110, BinPackParameters: false, BinPackArguments: false, AllowAllParametersOfDeclarationOnNextLine: false, AlignAfterOpenBracket: AlwaysBreak, PenaltyBreakBeforeFirstCallParameter: 1, IndentAccessModifiers: false, AccessModifierOffset: -1, SpacesBeforeTrailingComments: 2, }",
+						},
+					},
+				},
 			})
 			-- Format on save
 			-- vim.api.nvim_create_autocmd("BufWritePre", {
 			-- 	pattern = "*",
-			-- 	callback = function(args)
+			-- 	callbac = function(args)
 			-- 		require("conform").format({ bufnr = args.buf, async = true })
 			-- 	end,
 			-- })

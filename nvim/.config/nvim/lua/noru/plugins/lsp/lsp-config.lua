@@ -66,9 +66,6 @@ return {
 					".git",
 				},
 				filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
-				on_attach = function(client, bufnr)
-					client.server_capabilities.documentFormattingProvider = false
-				end,
 			})
 			vim.lsp.enable("clangd")
 
