@@ -12,15 +12,13 @@ return {
                wrap_results = true,
                wrap_line = true,
                layout_config = {
+                  horizontal = {
+                     preview_width = 0.60,
+                  },
                   width = 0.99,
                   height = 0.99,
                   prompt_position = "bottom",
                   preview_cutoff = 20,
-               },
-               layouts = {
-                  horizontal = {
-                     preview_width = 0.75,
-                  },
                },
                hidden = true,
                no_ignore = true,
@@ -54,6 +52,7 @@ return {
                find_command = { "rg", "--files", "-g", "!.git" },
                previewer = false,
                layout_config = {
+                  preview_width = 0.70,
                   width = 0.8,
                   height = 0.7,
                },
@@ -71,6 +70,7 @@ return {
                no_ignore = true,
                previewer = false,
                layout_config = {
+                  preview_width = 0.60,
                   width = 0.7,
                   height = 0.8,
                },
@@ -85,6 +85,7 @@ return {
                search = vim.fn.input("Grep > "),
                previewer = false,
                layout_config = {
+                  preview_width = 0.60,
                   width = 0.8,
                   height = 0.9,
                },
@@ -97,7 +98,9 @@ return {
             builtin.grep_string({
                search = vim.fn.input("Grep > "),
                previewer = false,
+               wrap_line = true,
                layout_config = {
+                  preview_width = 0.60,
                   width = 0.8,
                   height = 0.9,
                },
@@ -116,6 +119,7 @@ return {
                sorting_strategy = "ascending",
                layout_strategy = "vertical",
                layout_config = {
+                  preview_width = 0.60,
                   width = 0.99,
                   height = 0.99,
                   prompt_position = "top",
