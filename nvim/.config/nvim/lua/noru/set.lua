@@ -1,13 +1,13 @@
 -- tab settings
 vim.opt.tabstop = 4 -- Amount of spaces a \t character represent
-vim.opt.softtabstop = 4 -- Amount of spaces when pressing TAB or Backspace 
-vim.opt.shiftwidth = 4 -- Amount of spaces used for indentation 
+vim.opt.softtabstop = 4 -- Amount of spaces when pressing TAB or Backspace
+vim.opt.shiftwidth = 4 -- Amount of spaces used for indentation
 vim.opt.expandtab = true -- Converts \t into spaces when pressing TAB
 
 -- Enable relative line numbers
 vim.opt.nu = true
 vim.opt.rnu = true
-vim.opt.fillchars:append { eob = " " }
+vim.opt.fillchars:append({ eob = " " })
 
 -- Enable incremental search for "/" command
 vim.opt.hlsearch = true
@@ -15,3 +15,6 @@ vim.opt.incsearch = true
 
 -- Disable default status line showing the current mode (INSERT, VISUAL etc.)
 vim.opt.showmode = false
+
+--Cursor is always block-cursor
+vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:block,r-cr-o:block"
