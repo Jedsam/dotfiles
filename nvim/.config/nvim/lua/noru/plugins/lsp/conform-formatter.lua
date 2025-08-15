@@ -14,6 +14,7 @@ return {
                javascript = { "prettierd", "prettier", stop_after_first = true },
                c = { "astyle" },
                cpp = { "clang-format" },
+               cmake = { "gersemi" },
                -- java = { "google-java-format" },
             },
             format_after_save = {
@@ -26,6 +27,12 @@ return {
                      "Spaces",
                      "--indent-width",
                      "3",
+                  },
+               },
+               gersemi = {
+                  prepend_args = {
+                     "--indent",
+                     "2",
                   },
                },
                ["clang-format"] = {

@@ -13,7 +13,7 @@ return {
                wrap_line = true,
                layout_config = {
                   horizontal = {
-                     preview_width = 0.60,
+                     preview_width = 0.65,
                   },
                   width = 0.99,
                   height = 0.99,
