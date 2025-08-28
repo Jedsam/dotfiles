@@ -122,5 +122,5 @@ zvm_after_init_commands+=('[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh')
 
 # Start tmux at the start
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-  tmux attach-session || tmux new-session -s default
+  tmux attach-session || tmux new-session
 fi
