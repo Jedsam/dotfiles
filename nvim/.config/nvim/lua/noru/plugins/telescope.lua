@@ -78,11 +78,10 @@ return {
          end, { noremap = true, silent = true })
          vim.keymap.set("n", "<C-g>", builtin.git_files, {})
          vim.keymap.set("n", "<leader>lgs", function()
-            builtin.live_grep({ search = vim.fn.input("Grep > ") })
+            builtin.live_grep()
          end)
          vim.keymap.set("n", "<leader>lgS", function()
             builtin.live_grep({
-               search = vim.fn.input("Grep > "),
                previewer = false,
                layout_config = {
                   preview_width = 0.60,
