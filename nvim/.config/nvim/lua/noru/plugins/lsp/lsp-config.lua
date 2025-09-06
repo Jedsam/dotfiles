@@ -69,6 +69,8 @@ return {
          })
          vim.lsp.enable("clangd")
 
+         vim.lsp.enable("glsl_analyzer")
+
          -- Keybinds
          vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>")
          vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>")

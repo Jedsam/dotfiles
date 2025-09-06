@@ -15,6 +15,7 @@ return {
                c = { "astyle" },
                cpp = { "clang-format" },
                cmake = { "gersemi" },
+               glsl = { "clang-format" },
                -- java = { "google-java-format" },
             },
             format_after_save = {
@@ -45,7 +46,7 @@ return {
          -- Format on save
          -- vim.api.nvim_create_autocmd("BufWritePre", {
          -- 	pattern = "*",
-         -- 	callbac = function(args)
+         -- 	callback = function(args)
          -- 		require("conform").format({ bufnr = args.buf, async = true })
          -- 	end,
          -- })
