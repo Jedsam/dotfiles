@@ -77,10 +77,10 @@ return {
             })
          end, { noremap = true, silent = true })
          vim.keymap.set("n", "<C-g>", builtin.git_files, {})
-         vim.keymap.set("n", "<leader>lgs", function()
+         vim.keymap.set("n", "<leader>gs", function()
             builtin.live_grep()
          end)
-         vim.keymap.set("n", "<leader>lgS", function()
+         vim.keymap.set("n", "<leader>gS", function()
             builtin.live_grep({
                previewer = false,
                layout_config = {
@@ -90,21 +90,21 @@ return {
                },
             })
          end)
-         vim.keymap.set("n", "<leader>gs", function()
-            builtin.grep_string({ search = vim.fn.input("Grep > ") })
-         end)
-         vim.keymap.set("n", "<leader>gS", function()
-            builtin.grep_string({
-               search = vim.fn.input("Grep > "),
-               previewer = false,
-               wrap_line = true,
-               layout_config = {
-                  preview_width = 0.60,
-                  width = 0.8,
-                  height = 0.9,
-               },
-            })
-         end)
+         -- vim.keymap.set("n", "<leader>gs", function()
+         --    builtin.grep_string({ search = vim.fn.input("Grep > ") })
+         -- end)
+         -- vim.keymap.set("n", "<leader>gS", function()
+         --    builtin.grep_string({
+         --       search = vim.fn.input("Grep > "),
+         --       previewer = false,
+         --       wrap_line = true,
+         --       layout_config = {
+         --          preview_width = 0.60,
+         --          width = 0.8,
+         --          height = 0.9,
+         --       },
+         --    })
+         -- end)
          -- Use yanky with telescope
          require("telescope").load_extension("yank_history")
       end,
