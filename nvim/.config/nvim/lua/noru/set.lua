@@ -18,3 +18,10 @@ vim.opt.showmode = false
 
 --Cursor is always block-cursor
 vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:block,r-cr-o:block"
+
+-- Load folds when opening a buffer
+vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
+   pattern = { "*.*" },
+   desc = "load view (folds), when opening file",
+   command = "silent! loadview",
+})

@@ -1,5 +1,8 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<C-s>", vim.cmd.w) -- Save a file
+vim.keymap.set("n", "<C-s>", function()
+   vim.cmd.w()
+   vim.cmd.mkview()
+end, { desc = "Save file + view (folds)" }) -- save the file and the folds
 vim.keymap.set("i", "jk", "<ESC>", { silent = true }) -- Use jj in instert mode to swap back to normal mode
 
 -- Making delete permamently delete stuff and add new keybind for it (cut operation)
