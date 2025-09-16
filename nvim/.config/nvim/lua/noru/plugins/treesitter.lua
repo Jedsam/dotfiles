@@ -261,4 +261,8 @@ return {
       "nvim-treesitter/playground",
       cmd = "TSPlaygroundToggle",
    },
+   {
+      "tree-sitter/tree-sitter-html",
+      cmd = "TSUpdate html",
+   },
 }
