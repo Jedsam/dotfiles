@@ -37,7 +37,9 @@ return {
          vim.diagnostic.config({
             virtual_text = false,
          })
-         vim.keymap.set("n", "<Leader>d", ":lua vim.diagnostic.open_float(0, {scope='line'})<CR>")
+         vim.keymap.set("n", "<Leader>d", function()
+            vim.diagnostic.open_float({ scope = "line", focusable = false })
+         end)
          vim.lsp.config("lua_ls", {
             cmd = { "lua-language-server" },
             root_markers = { "lua" },

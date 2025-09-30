@@ -38,7 +38,7 @@ return {
                },
                ["clang-format"] = {
                   prepend_args = {
-                     "--style={IndentWidth: 2, TabWidth: 2, UseTab: Never, ColumnLimit: 110, BinPackParameters: false, BinPackArguments: false, AllowAllParametersOfDeclarationOnNextLine: false, AlignAfterOpenBracket: AlwaysBreak, PenaltyBreakBeforeFirstCallParameter: 1, IndentAccessModifiers: false, AccessModifierOffset: -1, SpacesBeforeTrailingComments: 2, SeparateDefinitionBlocks: Always, }",
+                     "--style={IndentWidth: 2, TabWidth: 2, UseTab: Never, ColumnLimit: 80, BinPackParameters: false, BinPackArguments: false, AllowAllParametersOfDeclarationOnNextLine: false, AlignAfterOpenBracket: AlwaysBreak, PenaltyBreakBeforeFirstCallParameter: 1, IndentAccessModifiers: false, AccessModifierOffset: -1, SpacesBeforeTrailingComments: 2, SeparateDefinitionBlocks: Always, BraceWrapping: { AfterStruct: false }}",
                   },
                },
             },
