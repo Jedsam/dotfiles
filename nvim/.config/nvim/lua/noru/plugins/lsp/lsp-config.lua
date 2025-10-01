@@ -40,6 +40,13 @@ return {
          vim.keymap.set("n", "<Leader>d", function()
             vim.diagnostic.open_float({ scope = "line", focusable = false })
          end)
+         vim.lsp.config("kotlin", {
+            cmd = { "kotlin-lsp", "--stdio" },
+            root_markers = { ".git", "build.gradle", "build.gradle.kts" },
+            filetypes = { "kotlin" },
+         })
+         vim.lsp.enable("kotlin")
+
          vim.lsp.config("lua_ls", {
             cmd = { "lua-language-server" },
             root_markers = { "lua" },

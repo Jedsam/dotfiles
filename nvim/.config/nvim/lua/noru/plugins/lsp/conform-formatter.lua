@@ -16,12 +16,16 @@ return {
                cpp = { "clang-format" },
                cmake = { "gersemi" },
                glsl = { "clang-format" },
+               kotlin = { "ktfmt" },
                -- java = { "google-java-format" },
             },
             format_after_save = {
                lsp_format = "fallback",
             },
             formatters = {
+               ["ktfmt"] = {
+                  timeout_ms = 5000,
+               },
                ["stylua"] = {
                   prepend_args = {
                      "--indent-type",

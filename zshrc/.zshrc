@@ -112,6 +112,8 @@ alias vim="nvim"
 alias vi="nvim"
 alias v="nvim"
 alias oldvim="vim"
+alias nvsql="nvim '+SQLua'"
+alias vsql="nvim '+SQLua'"
 
 export _PR_AI_DISABLE=1
 eval "$(pay-respects zsh)"
