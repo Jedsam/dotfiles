@@ -118,7 +118,7 @@ return {
                sorting_strategy = "ascending",
                layout_strategy = "vertical",
                layout_config = {
-                  preview_width = 0.60,
+                  preview_height = 0.60,
                   width = 0.99,
                   height = 0.99,
                   prompt_position = "top",
