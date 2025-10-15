@@ -8,7 +8,7 @@ return {
             c = { "cpplint", "cppcheck" },
             cpp = { "cpplint", "cppcheck" },
             cmake = { "cmakelint" },
-            markdown = { "vale" },
+            -- markdown = { "vale" },
             glsl = { "cpplint", "cppcheck" },
          }
          -- Configuring the existing linters
