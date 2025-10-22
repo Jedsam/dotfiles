@@ -74,9 +74,21 @@ return {
                "configure.ac",
                ".git",
             },
-            filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
+            filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
          })
          vim.lsp.enable("clangd")
+
+         require("lspconfig").protols.setup({
+            before_init = function(_, config)
+               config.init_options = {
+                  include_paths = {
+                     "/usr/local/include/protobuf",
+                     "vendor/protos",
+                     "../shared-protos",
+                  },
+               }
+            end,
+         })
 
          vim.lsp.enable("glsl_analyzer")
 

@@ -8,14 +8,14 @@ return {
       -- the root of your project. `nvim-jdtls` will use
       -- these to find the path to your project source code.
       local root_files = {
-         ".git",
 
          --- here are more examples files that may or
          --- may not work as root files, according to some guy on the internet
-         -- 'mvnw',
-         -- 'gradlew',
-         -- 'pom.xml',
-         -- 'build.gradle',
+         "build.gradle",
+         "mvnw",
+         "gradlew",
+         "pom.xml",
+         ".git",
       }
 
       local features = {
@@ -36,7 +36,17 @@ return {
 
          path.data_dir = vim.fn.stdpath("cache") .. "/nvim-jdtls"
 
-         local jdtls_install = require("mason-registry").get_package("jdtls"):get_install_path()
+         local mason_registry = require("mason-registry")
+         local jdtls_pkg = mason_registry.get_package("jdtls")
+
+         local jdtls_install
+         if jdtls_pkg:is_installed() then
+            jdtls_install = vim.fn.expand("$MASON/packages/jdtls")
+            print("JDTLS is installed at: " .. jdtls_install)
+         else
+            print("JDTLS is not installed.")
+            return nil
+         end
 
          path.java_agent = jdtls_install .. "/lombok.jar"
          path.launcher_jar = vim.fn.glob(jdtls_install .. "/plugins/org.eclipse.equinox.launcher_*.jar")
@@ -54,24 +64,41 @@ return {
          ---
          -- Include java-test bundle if present
          ---
-         local java_test_path = require("mason-registry").get_package("java-test"):get_install_path()
 
-         local java_test_bundle = vim.split(vim.fn.glob(java_test_path .. "/extension/server/*.jar"), "\n")
+         local java_test_pkg = mason_registry.get_package("java-test")
 
-         if java_test_bundle[1] ~= "" then
-            vim.list_extend(path.bundles, java_test_bundle)
+         local java_test_path
+         if java_test_pkg:is_installed() then
+            java_test_path = vim.fn.expand("$MASON/packages/java_test")
+            print("java_test is installed at: " .. java_test_path)
+            local java_test_bundle = vim.split(vim.fn.glob(java_test_path .. "/extension/server/*.jar"), "\n")
+
+            if java_test_bundle[1] ~= "" then
+               vim.list_extend(path.bundles, java_test_bundle)
+            end
+         else
+            print("java_test is not installed.")
          end
 
          ---
          -- Include java-debug-adapter bundle if present
          ---
-         local java_debug_path = require("mason-registry").get_package("java-debug-adapter"):get_install_path()
+         local java_debug_pkg = mason_registry.get_package("java-debug-adapter")
 
-         local java_debug_bundle =
-            vim.split(vim.fn.glob(java_debug_path .. "/extension/server/com.microsoft.java.debug.plugin-*.jar"), "\n")
+         local java_debug_path
+         if java_debug_pkg:is_installed() then
+            java_debug_path = vim.fn.expand("$MASON/packages/java-debug-adapter")
+            print("java_debug is installed at: " .. java_debug_path)
+            local java_debug_bundle = vim.split(
+               vim.fn.glob(java_debug_path .. "/extension/server/com.microsoft.java.debug.plugin-*.jar"),
+               "\n"
+            )
 
-         if java_debug_bundle[1] ~= "" then
-            vim.list_extend(path.bundles, java_debug_bundle)
+            if java_debug_bundle[1] ~= "" then
+               vim.list_extend(path.bundles, java_debug_bundle)
+            end
+         else
+            print("java_debug is not installed.")
          end
 
          ---
@@ -164,7 +191,9 @@ return {
          local cmd = {
             -- 💀
             "java",
-
+            "-Djava.import.gradle.enabled=true",
+            "-Djava.import.gradle.offline.enabled=false",
+            "-Djava.import.gradle.wrapper.enabled=true",
             "-Declipse.application=org.eclipse.jdt.ls.core.id1",
             "-Dosgi.bundles.defaultStartLevel=4",
             "-Declipse.product=org.eclipse.jdt.ls.core.product",
@@ -271,6 +300,17 @@ return {
             },
             init_options = {
                bundles = path.bundles,
+            },
+            handlers = {
+               ["textDocument/definition"] = function(_, result)
+                  if not result or vim.tbl_isempty(result) then
+                     print("Definition not found")
+                     return
+                  end
+                  -- jump immediately to the first location
+                  local def = result[1]
+                  vim.lsp.util.jump_to_location(def, "utf-8")
+               end,
             },
          })
       end

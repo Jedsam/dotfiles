@@ -28,3 +28,6 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
 
 -- disable swap files... idk if i should though?
 vim.opt.swapfile = false
+-- disable backup files... idk if i should though?
+vim.opt.backup = false
+vim.opt.writebackup = false
