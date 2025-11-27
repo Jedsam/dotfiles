@@ -1,7 +1,7 @@
 -- tab settings
-vim.opt.tabstop = 2      -- Amount of spaces a \t character represent
-vim.opt.softtabstop = 2  -- Amount of spaces when pressing TAB or Backspace
-vim.opt.shiftwidth = 2   -- Amount of spaces used for indentation
+vim.opt.tabstop = 2 -- Amount of spaces a \t character represent
+vim.opt.softtabstop = 2 -- Amount of spaces when pressing TAB or Backspace
+vim.opt.shiftwidth = 2 -- Amount of spaces used for indentation
 vim.opt.expandtab = true -- Converts \t into spaces when pressing TAB
 
 -- Enable relative line numbers
@@ -21,10 +21,11 @@ vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:block,r-cr-o:block"
 
 -- Load folds when opening a buffer
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
-  pattern = { "*.*" },
-  desc = "load view (folds), when opening file",
-  command = "silent! loadview",
+   pattern = { "*.*" },
+   desc = "load view (folds), when opening file",
+   command = "silent! loadview",
 })
 
+vim.opt.splitright = true
 -- disable swap files... idk if i should though?
 -- vim.opt.swapfile = false
