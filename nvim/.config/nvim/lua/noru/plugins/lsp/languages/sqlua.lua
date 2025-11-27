@@ -22,5 +22,14 @@ return {
             insert_execute_query = "<C-r>",
          },
       })
+      vim.api.nvim_create_autocmd("BufEnter", {
+         -- This pattern matches the exact file path that SQLua uses
+         pattern = "*/sqlua/Editor_1.sql",
+         callback = function()
+            -- Set noswapfile ONLY for this buffer
+            vim.opt_local.swapfile = false
+         end,
+         desc = "Disable swapfile for automatic SQLua editor buffer",
+      })
    end,
 }
